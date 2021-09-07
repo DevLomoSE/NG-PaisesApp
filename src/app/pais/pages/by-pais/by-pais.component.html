@@ -1,1 +1,47 @@
-<p>by-pais works!</p>
+<h2>Por Pais</h2>
+<hr />
+
+<div class="grid">
+  <div class="col">
+    <form autocomplete="off" (ngSubmit)="search()">
+      <input
+        type="text"
+        pInputText
+        [(ngModel)]="termino"
+        placeholder="Buscar pais..."
+        name="ITPais"
+      />
+    </form>
+  </div>
+</div>
+
+<hr />
+
+<div>
+    <p-message severity="error" text="No se encontró nada con el término ASDASD"></p-message>  
+</div>
+
+<div>
+    <p-table [value]="paises" styleClass="p-datatable-striped" responsiveLayout="scroll" [rowHover]="true">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>#</th>
+                <th>Flag</th>
+                <th>Nombre</th>
+                <th>Poblacion</th>
+                <th></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-pais>
+            <tr>
+                <td>{{pais.id}}</td>
+                <td>{{pais.flag}}</td>
+                <td>{{pais.name}}</td>
+                <td>{{pais.poblation}}</td>
+                <td>
+                    <p-button label="Click" ></p-button>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

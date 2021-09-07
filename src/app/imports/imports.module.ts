@@ -5,6 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import {CardModule} from 'primeng/card';
 import {ListboxModule} from 'primeng/listbox';
+import {MessageModule} from 'primeng/message';
+import {TableModule} from 'primeng/table';
+import {ButtonModule} from 'primeng/button';
 
 
 @NgModule({
@@ -17,6 +20,9 @@ import {ListboxModule} from 'primeng/listbox';
     ListboxModule,
     InputTextModule,
     CardModule,
+    MessageModule,
+    TableModule,
+    ButtonModule,
   ],
 })
 export class ImportsModule { }

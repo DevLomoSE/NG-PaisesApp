@@ -1,4 +1,6 @@
+import { unsupported } from '@angular/compiler/src/render3/view/util';
 import { Component, OnInit } from '@angular/core';
+import { empty } from 'rxjs';
 
 @Component({
   selector: 'app-by-pais',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ByPaisComponent implements OnInit {
 
-  constructor() { }
+  paises: object[];
+  termino: string = '';
+
+  constructor() {
+
+    this.paises = [
+      { code: '32435', flag: 'none', name: 'Arandas', poblation: '53', action: 'ver' },
+    ];
+   }
 
   ngOnInit(): void {
+  }
+
+  search(): void{
+    console.log(this.termino);
   }
 
 }
