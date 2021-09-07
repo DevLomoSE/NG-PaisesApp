@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import {CardModule} from 'primeng/card';
+import {ListboxModule} from 'primeng/listbox';
 
 
 @NgModule({
@@ -11,8 +13,10 @@ import {CardModule} from 'primeng/card';
     CommonModule
   ],
   exports: [
+    FormsModule,
+    ListboxModule,
     InputTextModule,
-    CardModule
+    CardModule,
   ],
 })
 export class ImportsModule { }
