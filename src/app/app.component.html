@@ -2,14 +2,10 @@
   <div class="col-3">
     <h2>Busquedas</h2>
     <hr />
-
-    <p-listbox [options]="menuItems" [(ngModel)]="selectedItem" optionLabel="name" optionValue="name"></p-listbox>
+    <app-sidebar></app-sidebar>
   </div>
 
   <div class="col">
-    <h2>Por X</h2>
-    <hr>
-    <app-by-region></app-by-region>
+    <router-outlet></router-outlet>
   </div>
-  
 </div>
