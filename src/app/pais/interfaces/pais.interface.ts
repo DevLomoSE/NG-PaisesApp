@@ -1,4 +1,4 @@
-export interface SearchCountryResponse {
+export interface Country {
   name: string;
   topLevelDomain: string[];
   alpha2Code: string;
