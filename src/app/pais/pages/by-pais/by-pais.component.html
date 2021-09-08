@@ -3,15 +3,7 @@
 
 <div class="grid">
   <div class="col">
-    <form autocomplete="off" (ngSubmit)="search()">
-      <input
-        type="text"
-        pInputText
-        [(ngModel)]="termino"
-        placeholder="Buscar pais..."
-        name="ITPais"
-      />
-    </form>
+    <app-pais-input (onEnter)="search( $event )"></app-pais-input>
   </div>
 </div>
 

@@ -1,6 +1,4 @@
-import { unsupported } from '@angular/compiler/src/render3/view/util';
 import { Component, OnInit } from '@angular/core';
-import { empty } from 'rxjs';
 import { Country } from '../../interfaces/pais.interface';
 import { PaisService } from '../../services/pais.service';
 
@@ -28,8 +26,9 @@ export class ByPaisComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  search(): void{
+  search( termino: string ): void{
     console.clear();
+    this.termino = termino;
     if (this.termino != null){
       this.errorFlag = false;
       this.paises = [];
