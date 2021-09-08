@@ -17,31 +17,51 @@
 
 <hr />
 
-<div>
-    <p-message severity="error" text="No se encontró nada con el término ASDASD"></p-message>  
+<div *ngIf="errorFlag">
+  <p-message
+    severity="error"
+    text="No se encontró nada con el término {{ termino }}"
+  ></p-message>
 </div>
 
-<div>
-    <p-table [value]="paises" styleClass="p-datatable-striped" responsiveLayout="scroll" [rowHover]="true">
-        <ng-template pTemplate="header">
-            <tr>
-                <th>#</th>
-                <th>Flag</th>
-                <th>Nombre</th>
-                <th>Poblacion</th>
-                <th></th>
-            </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-pais>
-            <tr>
-                <td>{{pais.id}}</td>
-                <td>{{pais.flag}}</td>
-                <td>{{pais.name}}</td>
-                <td>{{pais.poblation}}</td>
-                <td>
-                    <p-button label="Click" ></p-button>
-                </td>
-            </tr>
-        </ng-template>
-    </p-table>
+<div *ngIf="!errorFlag">
+  <p-table
+    [value]="paises"
+    styleClass="p-datatable-striped"
+    responsiveLayout="scroll"
+    [rowHover]="true"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th>#</th>
+        <th>Codigo</th>
+        <th>Bandera</th>
+        <th>Nombre</th>
+        <th>Poblacion</th>
+        <th></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-pais>
+      <tr>
+        <td>{{ pais.id }}</td>
+        <td>{{ pais.alpha3Code }}</td>
+        <td>
+          <img
+            [src]="pais.flag"
+            [alt]="pais.name"
+            width="100"
+            class="p-shadow-4"
+          />
+        </td>
+        <td>{{ pais.name }}</td>
+        <td>{{ pais.population | number }}</td>
+        <td>
+          <button pButton pRipple type="button" icon="pi pi-eye"
+                  routerLink="/pais/{{pais.alpha2Code}}"
+                  class="p-button-rounded p-button-primary p-button-text">
+          </button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
 </div>
