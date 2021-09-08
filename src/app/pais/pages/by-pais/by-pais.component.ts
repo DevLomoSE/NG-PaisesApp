@@ -51,4 +51,8 @@ export class ByPaisComponent implements OnInit {
     }
   }
 
+  sugerencias( event: any): void{
+    this.errorFlag = false;
+  }
+
 }

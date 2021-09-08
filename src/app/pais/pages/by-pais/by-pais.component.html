@@ -3,7 +3,7 @@
 
 <div class="grid">
   <div class="col">
-    <app-pais-input (onEnter)="search( $event )"></app-pais-input>
+    <app-pais-input (onEnter)="search( $event )" (onDebounce)="sugerencias( $event )"></app-pais-input>
   </div>
 </div>
 
