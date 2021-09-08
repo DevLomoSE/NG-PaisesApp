@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ByRegionComponent implements OnInit {
 
+  private route = '/region';
+
   constructor() { }
 
   ngOnInit(): void {

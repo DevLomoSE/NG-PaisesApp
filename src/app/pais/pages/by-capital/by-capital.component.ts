@@ -14,6 +14,8 @@ export class ByCapitalComponent implements OnInit {
   public errorFlag: boolean;
   public placeholder: string;
 
+  private route = '/capital';
+
   constructor(
     private paisService: PaisService
   ) {

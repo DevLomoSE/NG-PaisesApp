@@ -14,6 +14,8 @@ export class ByPaisComponent implements OnInit {
   public errorFlag: boolean;
   public placeholder: string;
 
+  private route = '';
+
   constructor(
     private paisService: PaisService
   ) {
