@@ -8,6 +8,8 @@ import {ListboxModule} from 'primeng/listbox';
 import {MessageModule} from 'primeng/message';
 import {TableModule} from 'primeng/table';
 import {ButtonModule} from 'primeng/button';
+import {SkeletonModule} from 'primeng/skeleton';
+import {BadgeModule} from 'primeng/badge';
 
 
 @NgModule({
@@ -23,6 +25,8 @@ import {ButtonModule} from 'primeng/button';
     MessageModule,
     TableModule,
     ButtonModule,
+    SkeletonModule,
+    BadgeModule
   ],
 })
 export class ImportsModule { }
