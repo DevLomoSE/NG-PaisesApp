@@ -12,6 +12,7 @@ export class ByCapitalComponent implements OnInit {
   public paises: Country[];
   public termino: string;
   public errorFlag: boolean;
+  public placeholder: string;
 
   constructor(
     private paisService: PaisService
@@ -19,6 +20,7 @@ export class ByCapitalComponent implements OnInit {
     this.errorFlag = false;
     this.termino = '';
     this.paises = [];
+    this.placeholder = 'Buscar capital...';
   }
 
   ngOnInit(): void {
