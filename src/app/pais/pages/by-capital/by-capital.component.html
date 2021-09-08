@@ -1,1 +1,21 @@
-<p>by-capital works!</p>
+<h2>Por Capital</h2>
+<hr />
+
+<div class="grid">
+  <div class="col">
+    <app-pais-input (onEnter)="search( $event )" (onDebounce)="sugerencias( $event )"></app-pais-input>
+  </div>
+</div>
+
+<hr />
+
+<div *ngIf="errorFlag">
+  <p-message
+    severity="error"
+    text="No se encontró nada con el término {{ termino }}"
+  ></p-message>
+</div>
+
+<div *ngIf="!errorFlag">
+  <app-pais-table [paises]="paises"></app-pais-table>
+</div>
