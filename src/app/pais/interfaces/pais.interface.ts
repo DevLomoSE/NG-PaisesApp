@@ -1,4 +1,5 @@
 export interface Country {
+  id: number;
   name: string;
   topLevelDomain: string[];
   alpha2Code: string;
