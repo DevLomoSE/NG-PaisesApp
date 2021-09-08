@@ -1,10 +1,13 @@
 <form autocomplete="off" (ngSubmit)="search()">
-  <input
-    type="text"
-    pInputText
-    [(ngModel)]="termino"
-    (input)="keyPressed()"
-    placeholder="Buscar pais..."
-    name="ITPais"
-  />
+  <span class="p-input-icon-right">
+    <i class="pi pi-search"></i>
+    <input
+      type="text"
+      pInputText
+      [(ngModel)]="termino"
+      (input)="keyPressed()"
+      placeholder="Buscar pais..."
+      name="ITPais"
+    />
+  </span>
 </form>
