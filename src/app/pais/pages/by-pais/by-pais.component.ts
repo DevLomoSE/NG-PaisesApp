@@ -9,9 +9,10 @@ import { PaisService } from '../../services/pais.service';
 })
 export class ByPaisComponent implements OnInit {
 
-  paises: Country[];
-  termino: string;
-  errorFlag: boolean;
+  public paises: Country[];
+  public termino: string;
+  public errorFlag: boolean;
+  public placeholder: string;
 
   constructor(
     private paisService: PaisService
@@ -20,6 +21,7 @@ export class ByPaisComponent implements OnInit {
     this.errorFlag = false;
     this.termino = '';
     this.paises = [];
+    this.placeholder = 'Buscar pais...';
 
    }
 
