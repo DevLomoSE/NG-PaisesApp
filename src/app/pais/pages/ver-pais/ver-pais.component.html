@@ -1,64 +1,69 @@
-<div *ngIf="!pais; else divPais">
-  <p-message severity="info" text="Espere por favor..."></p-message>
-  <p-skeleton borderRadius="16px"></p-skeleton>
+
+
+<div class="scalein animation-duration-1000">
+
+  <div *ngIf="!pais; else divPais">
+    <p-message severity="info" text="Espere por favor..."></p-message>
+    <p-skeleton borderRadius="16px"></p-skeleton>
+  </div>
+
+  <ng-template #divPais>
+    <div class="grid">
+      <div class="col">
+        <h1>
+          País: <small>{{ pais?.name }}</small>
+        </h1>
+      </div>
+    </div>
+  
+    <div class="grid">
+      <div class="col">
+        <h3>Bandera</h3>
+        <img
+          src="{{ pais?.flag }}"
+          alt="bandera de {{ pais?.name }}"
+          width="55%"
+        />
+      </div>
+  
+      <div class="col">
+        <h3>Información</h3>
+        <ul class="list-group">
+          <li class="list-group-item">
+            <strong>Población</strong> {{ pais?.population | number }}
+          </li>
+          <li class="list-group-item">
+            <strong>Código numérico</strong> {{ pais?.numericCode }}
+          </li>
+          <li class="list-group-item">
+            <strong>Nombre nativo</strong> {{ pais?.nativeName }}
+          </li>
+          <li class="list-group-item">
+            <strong>Region</strong> {{ pais?.region }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  
+    <h3>Traducciones</h3>
+    <div class="grid">
+      <div class="col">
+        <p-badge class="mr-2" [value]="pais!.translations!.br" severity="info" severity="info"></p-badge>
+        <p-badge class="mr-2" [value]="pais!.translations!.de" severity="info" severity="info"></p-badge>
+        <p-badge class="mr-2" [value]="pais!.translations!.es" severity="info" severity="info"></p-badge>
+        <p-badge class="mr-2" [value]="pais!.translations!.fa" severity="info" severity="info"></p-badge>
+        <p-badge class="mr-2" [value]="pais!.translations!.fr" severity="info" severity="info"></p-badge>
+        <p-badge class="mr-2" [value]="pais!.translations!.hr" severity="info" severity="info"></p-badge>
+        <p-badge class="mr-2" [value]="pais!.translations!.it" severity="info" severity="info"></p-badge>
+        <p-badge class="mr-2" [value]="pais!.translations!.ja" severity="info" severity="info"></p-badge>
+        <p-badge class="mr-2" [value]="pais!.translations!.nl" severity="info" severity="info"></p-badge>
+        <p-badge class="mr-2" [value]="pais!.translations!.pt" severity="info" severity="info"></p-badge>
+      </div>
+    </div>
+  
+    <pre class="mt-5">
+      {{ pais | json }}
+    </pre>
+  
+  </ng-template>
 </div>
-
-<ng-template #divPais>
-  <div class="grid">
-    <div class="col">
-      <h1>
-        País: <small>{{ pais?.name }}</small>
-      </h1>
-    </div>
-  </div>
-
-  <div class="grid">
-    <div class="col">
-      <h3>Bandera</h3>
-      <img
-        src="{{ pais?.flag }}"
-        alt="bandera de {{ pais?.name }}"
-        width="55%"
-      />
-    </div>
-
-    <div class="col">
-      <h3>Información</h3>
-      <ul class="list-group">
-        <li class="list-group-item">
-          <strong>Población</strong> {{ pais?.population | number }}
-        </li>
-        <li class="list-group-item">
-          <strong>Código numérico</strong> {{ pais?.numericCode }}
-        </li>
-        <li class="list-group-item">
-          <strong>Nombre nativo</strong> {{ pais?.nativeName }}
-        </li>
-        <li class="list-group-item">
-          <strong>Region</strong> {{ pais?.region }}
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <h3>Traducciones</h3>
-  <div class="grid">
-    <div class="col">
-      <p-badge class="mr-2" [value]="pais!.translations!.br" severity="info" severity="info"></p-badge>
-      <p-badge class="mr-2" [value]="pais!.translations!.de" severity="info" severity="info"></p-badge>
-      <p-badge class="mr-2" [value]="pais!.translations!.es" severity="info" severity="info"></p-badge>
-      <p-badge class="mr-2" [value]="pais!.translations!.fa" severity="info" severity="info"></p-badge>
-      <p-badge class="mr-2" [value]="pais!.translations!.fr" severity="info" severity="info"></p-badge>
-      <p-badge class="mr-2" [value]="pais!.translations!.hr" severity="info" severity="info"></p-badge>
-      <p-badge class="mr-2" [value]="pais!.translations!.it" severity="info" severity="info"></p-badge>
-      <p-badge class="mr-2" [value]="pais!.translations!.ja" severity="info" severity="info"></p-badge>
-      <p-badge class="mr-2" [value]="pais!.translations!.nl" severity="info" severity="info"></p-badge>
-      <p-badge class="mr-2" [value]="pais!.translations!.pt" severity="info" severity="info"></p-badge>
-    </div>
-  </div>
-
-  <pre class="mt-5">
-    {{ pais | json }}
-  </pre>
-
-</ng-template>
