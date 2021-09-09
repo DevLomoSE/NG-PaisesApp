@@ -1,8 +1,9 @@
-<div class="grid mt-2 scalein animation-duration-1200">
+<div class="mt-2 scalein animation-duration-1200">
   <div class="col text-center">
     <h1>Country Search</h1>
   </div>
 </div>
+
 <div class="grid fadeoutdown animation-duration-1500">
   <div class="col-3">
     <h2>Busquedas</h2>
@@ -10,7 +11,7 @@
     <app-sidebar [selectedItem]="selectedItem"></app-sidebar>
   </div>
 
-  <div class="col">
+  <div class="col-9">
     <router-outlet (activate)="onOutletLoaded($event)"></router-outlet>
   </div>
 </div>

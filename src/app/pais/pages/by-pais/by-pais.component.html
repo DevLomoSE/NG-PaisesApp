@@ -3,11 +3,25 @@
   <hr />
 
   <div class="grid">
-    <div class="col">
+    <div class="col-5">
       <app-pais-input (onEnter)="search( $event )"
                       (onDebounce)="sugerencias( $event )"
                       [placeholder]="placeholder">
       </app-pais-input>
+
+      <ul class="list-group mt-0" *ngIf="sugerenciasFlag">
+        <li class="list-group-item list-group-item-action"
+            *ngFor="let pais of paisesSugeridos">
+            <span [routerLink]="['/pais', pais.alpha2Code]">
+              {{ pais.name }}
+            </span>
+        </li>
+        <li class="list-group-item list-group-item-action">
+            <span (click)="searchSugerido(termino)">
+              Buscar "{{ termino }}"
+            </span>
+        </li>
+      </ul>
     </div>
   </div>
 

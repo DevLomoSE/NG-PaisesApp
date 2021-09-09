@@ -10,8 +10,10 @@ import { PaisService } from '../../services/pais.service';
 export class ByPaisComponent implements OnInit {
 
   public paises: Country[];
+  public paisesSugeridos: Country[];
   public termino: string;
   public errorFlag: boolean;
+  public sugerenciasFlag: boolean;
   public placeholder: string;
 
   private route = '';
@@ -21,8 +23,10 @@ export class ByPaisComponent implements OnInit {
   ) {
 
     this.errorFlag = false;
+    this.sugerenciasFlag = false;
     this.termino = '';
     this.paises = [];
+    this.paisesSugeridos = [];
     this.placeholder = 'Buscar pais...';
 
    }
@@ -35,6 +39,7 @@ export class ByPaisComponent implements OnInit {
     this.termino = termino;
     if (this.termino != null){
       this.errorFlag = false;
+      this.sugerenciasFlag = false;
       this.paises = [];
       this.paisService.buscarPais(this.termino)
                       .subscribe(
@@ -55,8 +60,19 @@ export class ByPaisComponent implements OnInit {
     }
   }
 
-  sugerencias( event: any): void{
+  sugerencias( termino: any): void{
     this.errorFlag = false;
+    this.sugerenciasFlag = true;
+
+    this.termino = termino;
+
+    this.paisService.buscarPais(termino).subscribe( paises => {
+      this.paisesSugeridos = paises.splice(0,10);
+    });
+  }
+
+  searchSugerido( termino: string){
+    this.search(termino);
   }
 
 }

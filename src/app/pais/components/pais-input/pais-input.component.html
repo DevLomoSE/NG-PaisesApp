@@ -1,5 +1,5 @@
 <form autocomplete="off" (ngSubmit)="search()">
-  <span class="p-input-icon-right">
+  <span class="w-full p-input-icon-right">
     <i class="pi pi-search"></i>
     <input
       type="text"
@@ -8,6 +8,7 @@
       (input)="keyPressed()"
       [placeholder]="placeholder"
       name="ITPais"
+      class="min-w-full max-w-full"
     />
   </span>
 </form>

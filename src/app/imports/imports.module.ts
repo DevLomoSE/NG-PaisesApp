@@ -10,7 +10,7 @@ import {TableModule} from 'primeng/table';
 import {ButtonModule} from 'primeng/button';
 import {SkeletonModule} from 'primeng/skeleton';
 import {BadgeModule} from 'primeng/badge';
-
+import {ScrollTopModule} from 'primeng/scrolltop';
 
 @NgModule({
   declarations: [],
@@ -26,7 +26,8 @@ import {BadgeModule} from 'primeng/badge';
     TableModule,
     ButtonModule,
     SkeletonModule,
-    BadgeModule
+    BadgeModule,
+    ScrollTopModule,
   ],
 })
 export class ImportsModule { }
