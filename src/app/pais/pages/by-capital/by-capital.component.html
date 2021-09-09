@@ -1,24 +1,26 @@
-<h2>Por Capital</h2>
-<hr />
+<div class="fadein animation-duration-500">
+  <h2>Por Capital</h2>
+  <hr />
 
-<div class="grid">
-  <div class="col">
-    <app-pais-input (onEnter)="search( $event )" 
-                    (onDebounce)="sugerencias( $event )"
-                    [placeholder]="placeholder">
-    </app-pais-input>
+  <div class="grid">
+    <div class="col">
+      <app-pais-input (onEnter)="search( $event )" 
+                      (onDebounce)="sugerencias( $event )"
+                      [placeholder]="placeholder">
+      </app-pais-input>
+    </div>
   </div>
-</div>
 
-<hr />
+  <hr />
 
-<div *ngIf="errorFlag">
-  <p-message
-    severity="error"
-    text="No se encontró nada con el término {{ termino }}"
-  ></p-message>
-</div>
+  <div *ngIf="errorFlag">
+    <p-message
+      severity="error"
+      text="No se encontró nada con el término {{ termino }}"
+    ></p-message>
+  </div>
 
-<div *ngIf="!errorFlag">
-  <app-pais-table [paises]="paises"></app-pais-table>
+  <div *ngIf="!errorFlag">
+    <app-pais-table [paises]="paises"></app-pais-table>
+  </div>
 </div>
