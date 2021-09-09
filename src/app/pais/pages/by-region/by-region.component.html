@@ -1,1 +1,15 @@
-<p>by-region works!</p>
+<h2>Buscar por Region<small> {{ regionActiva | titlecase }} </small></h2>
+<hr />
+
+<h3>Seleccione la region</h3>
+<div class="grid">
+  <div class="col">
+    <button pButton 
+            class="p-button-rounded p-button-help mr-2"
+            [class]=" mutateClassCSS(region) "
+            *ngFor="let region of regiones"
+            (click)="activarRegion( region )">
+        {{ region | titlecase }}
+    </button>
+  </div>
+</div>
